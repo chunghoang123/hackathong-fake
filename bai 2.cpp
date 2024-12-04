@@ -14,7 +14,6 @@ int main()
 		printf("7. Tim kiem mot phan tu va in ra vi tri cua phan tu do trong mang\n");
 		printf("8. Thoat\n");
 		printf("\n");
-		int chon;
 		printf("moi chon 1 trong 8 cai: ");
 		scanf("%d",&chon);
 		int a[100][100];
@@ -44,22 +43,15 @@ int main()
 			//In gia tri cac phan tu cau mang theo ma tran
 			case 2:	
 			{
-				if(m==n)
+				printf("ma tran:\n");
+				for(int i=0;i<m;i++)
 				{
-					printf("ma tran:\n");
-					for(int i=0;i<m;i++)
+					for(int j=0;j<n;j++)
 					{
-						for(int j=0;j<n;j++)
-						{
-							printf("%5d",a[i][j]);
-						}
-						printf("\n");
+						printf("%5d",a[i][j]);
 					}
+					printf("\n");
 				}
-				else
-					{
-						printf("khong phia ma tran\n");
-					}
 					printf("\n");
 				break;
 			}
@@ -72,7 +64,7 @@ int main()
 				{
 					for(int j=0;j<n;j++)
 					{
-					if(i==0||i==m-1||j==0||j==n-1);
+					if(i==0||i==m-1||j==0||j==n-1)
 						{
 							printf("%d, ",a[i][j]);
 							tich *=a[i][j];
@@ -86,6 +78,7 @@ int main()
 			//In ra cac phan tu nam tren duong cheo chinh
 			case 4:
 			{
+			
 				for(int i=0;i<m;i++)
 				{
 					for(int j=0;j<n;j++)
@@ -95,7 +88,7 @@ int main()
 							printf("%d, ",a[i][j]);
 						}
 					}
-				}
+				}	
 				printf("\n");
 				break;
 			}
@@ -164,10 +157,13 @@ int main()
 						{
 							x=i;
 							z=j;
-							printf("vi tri so can tim nam o hang %d cot %d",x,z);
+							printf("vi tri so can tim nam o a[%d][%d]",x,z);
+							printf("\n");
 							break;
 						}
+						
 					}
+				
 				}
 				if(x==-1&&z==-1)
 				{
@@ -177,14 +173,15 @@ int main()
 			}
 			case 8:
 			{
-				return 1;
-			  break;
 			  default :
-			  printf ("khong ton tai");
-				break;
-			}							  														
+			  {
+			  	printf("dung chuong trinh");	
+			  }  
+			  printf("\n");
+			}
+			break;							  														
 		}
 
-	}while (chon>0&&chon<9);
+	}while(chon>0 && chon<8);
 		return 0;
 }
